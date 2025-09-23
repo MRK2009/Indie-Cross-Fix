@@ -11,7 +11,6 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
-import lime.media.openal.AL;
 import openfl.system.System;
 
 /**
@@ -232,11 +231,6 @@ class GameOverCuphead extends MusicBeatSubstate
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
-
-		@:privateAccess
-		{
-			AL.sourcef(deadMusic._channel.__source.__backend.handle, AL.PITCH, songSpeed);
-		}
 
 		if (!isEnding)
 		{
