@@ -54,8 +54,8 @@
 	<!-- _______________________________ Libraries ______________________________ -->
 
 	<haxelib name="flixel" />
-	<haxelib name="flixel-addons" />
-	<haxelib name="flixel-ui" />
+	<haxelib name="flixel-addons" version="2.11.0"/>
+	<haxelib name="flixel-ui" version="2.4.0"/>
 	<haxelib name="discord_rpc" if="cpp"/>
         <haxelib name="tentools" />
 	<haxelib name="linc_luajit" if="cpp"/>
