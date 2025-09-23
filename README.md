@@ -45,17 +45,17 @@ This game was made with love to Newgrounds and its community. Extra love to Tom 
 	- Windows: install from the [git-scm](https://git-scm.com/downloads) website.
 	- Linux: install the `git` package: `sudo apt install git` (ubuntu), `sudo pacman -S git` (arch), etc... (you probably already have it)
 3. Install and set up the necessary libraries:
-	- `haxelib install lime`
-	- `haxelib install openfl`
-	- `haxelib install flixel`
+	- `haxelib install lime 7.9.0`
+	- `haxelib install openfl 9.1.0`
+	- `haxelib install flixel 4.11.0`
 	- `haxelib run lime setup`
 	- `haxelib run lime setup flixel`
-	- `haxelib install flixel-tools`
+	- `haxelib install flixel-tools 1.5.1`
 	- `haxelib run flixel-tools setup`
-	- `haxelib install flixel-addons`
-	- `haxelib install flixel-ui`
+	- `haxelib install flixel-addons 2.11.0`
+	- `haxelib install flixel-ui 2.4.0`
 	- `haxelib install linc_luajit`
 	- `haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc`
 	- `haxelib git systools https://github.com/haya3218/systools`
-	- `haxelib run lime rebuild systools windows`
+	- `haxelib run lime rebuild systools [windows/linux]`
 	- `haxelib git tentools https://github.com/TentaRJ/tentools`
