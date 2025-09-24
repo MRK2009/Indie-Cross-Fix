@@ -24,6 +24,7 @@ jobs:
           sudo add-apt-repository ppa:haxe/releases -y
           sudo apt-get update
           sudo apt-get install gcc-multilib g++-multilib haxe -y
+          sudo apt-get update && sudo apt-get install -y libidn11
           haxelib setup ~/haxelib
           haxelib install lime 7.9.0
           haxelib install openfl 9.1.0
