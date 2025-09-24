@@ -32,7 +32,7 @@ jobs:
           haxelib run lime setup
           haxelib run lime setup flixel
           haxelib install flixel-tools 1.5.1
-          printf "y\n4\n" | haxelib run flixel-tools setup
+          printf "y\n3\n" | haxelib run flixel-tools setup
           haxelib install flixel-addons 2.11.0
           haxelib install flixel-ui 2.4.0
           haxelib install linc_luajit
