@@ -83,7 +83,7 @@ class Animation extends DisplayObjectContainer
     
     private function gotoFrame(indexOrLabel : Dynamic) : Void
     {
-        currentFrame = (Std.is(indexOrLabel, String)) ? 
+        currentFrame = (Std.isOfType(indexOrLabel, String)) ? 
         _symbol.getFrame(Std.string(indexOrLabel)) : Std.int(indexOrLabel);
     }
     
