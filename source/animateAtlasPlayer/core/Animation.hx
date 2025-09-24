@@ -195,7 +195,7 @@ class Animation extends DisplayObjectContainer
 		
 		var child:DisplayObjectContainer;
 		for (i in 0...symbol.numChildren) {
-			if (!Std.is(symbol.getChildAt(i), DisplayObjectContainer)) continue;
+			if (!Std.isOfType(symbol.getChildAt(i), DisplayObjectContainer)) continue;
 			child = cast(symbol.getChildAt(i), DisplayObjectContainer);
 			if (child.name.indexOf(itemName)==0 && child.numChildren>0) cast(child.getChildAt(0), Symbol).setItem(item);
 			else setItem (itemName, cast(child,DisplayObjectContainer), item);
