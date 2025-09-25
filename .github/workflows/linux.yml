@@ -14,12 +14,16 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@main
-      - uses: krdlab/setup-haxe@v1.2.0
+      - name: Checkout
+        uses: actions/checkout@main
+        with:
+          submodules: true
+      - name: Setup Haxe
+        uses: krdlab/setup-haxe@v1.2.0
         with:
           haxe-version: 4.2.5
       # Runs a set of commands using the runners shell
-      - name: script run line haha
+      - name: Installing Libraries
         run: |
           sudo add-apt-repository ppa:haxe/releases -y
           sudo apt-get update
@@ -40,7 +44,9 @@ jobs:
           haxelib run lime rebuild systools linux
           haxelib git tentools https://github.com/TentaRJ/tentools
           haxelib list
-          haxelib run lime build linux
+
+      - name: Building
+        run: haxelib run lime build linux -final
 
       - uses: actions/upload-artifact@main
         with:
