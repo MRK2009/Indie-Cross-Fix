@@ -32,7 +32,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Installing Libraries
         run: |
-          brew install --cask vlc
           haxelib setup ~/haxelib
           haxelib install lime 7.9.0
           haxelib install openfl 9.1.0
@@ -49,6 +48,7 @@ jobs:
           haxelib run lime rebuild systools mac
           haxelib git tentools https://github.com/TentaRJ/tentools
           haxelib list
+          brew install --cask vlc
           
       - name: Building
         run: haxelib run lime build mac -final
