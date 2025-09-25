@@ -48,7 +48,6 @@ jobs:
           haxelib run lime rebuild systools mac
           haxelib git tentools https://github.com/TentaRJ/tentools
           haxelib list
-          brew install --cask vlc
           
       - name: Building
         run: haxelib run lime build mac -final
