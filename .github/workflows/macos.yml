@@ -24,9 +24,16 @@ jobs:
         with:
           haxe-version: 4.2.5
 
+      - name: Setup XCode
+        uses: maxim-lobanov/setup-xcode@master
+        with:
+          xcode-version: '16.4'
+
       # Runs a set of commands using the runners shell
       - name: Installing Libraries
         run: |
+          brew update
+          brew install --cask vlc
           haxelib setup ~/haxelib
           haxelib install lime 7.9.0
           haxelib install openfl 9.1.0
