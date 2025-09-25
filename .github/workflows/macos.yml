@@ -14,12 +14,18 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@main
-      - uses: krdlab/setup-haxe@v1.2.0
+      - name: Checkout
+        uses: actions/checkout@main
+        with:
+          submodules: true
+          
+      - name: Setup Haxe
+        uses: krdlab/setup-haxe@v1.2.0
         with:
           haxe-version: 4.2.5
+
       # Runs a set of commands using the runners shell
-      - name: script run line haha
+      - name: Installing Libraries
         run: |
           haxelib setup ~/haxelib
           haxelib install lime 7.9.0
@@ -31,16 +37,21 @@ jobs:
           printf "y\n4\n" | haxelib run flixel-tools setup
           haxelib install flixel-addons 2.11.0
           haxelib install flixel-ui 2.4.0
-          haxelib install linc_luajit
+          haxelib install linc_luajit 0.0.4
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
           haxelib git systools https://github.com/haya3218/systools
           haxelib run lime rebuild systools mac
           haxelib git tentools https://github.com/TentaRJ/tentools
           haxelib list
-          haxelib run lime build mac
-          tar -zcvf Indie Cross.tar.gz -C export/release/macos/bin .
+          
+      - name: Building
+        run: haxelib run lime build mac -final
 
+      - name: Tar files
+        run:  tar -zcvf Indie Cross.tar.gz -C export/release/macos/bin .
+        
       - uses: actions/upload-artifact@main
         with:
           name: Windows Build
           path: export/release/windows/bin
+          if-no-files-found: warn
