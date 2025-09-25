@@ -43,6 +43,7 @@ jobs:
           haxelib install flixel-addons 2.11.0
           haxelib install flixel-ui 2.4.0
           haxelib install linc_luajit 0.0.7
+          haxelib git hxcpp https://github.com/HomuHomu833-garbage/hxcpp
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
           haxelib git systools https://github.com/haya3218/systools
           haxelib run lime rebuild systools linux
