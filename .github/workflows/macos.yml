@@ -50,7 +50,8 @@ jobs:
       - name: Tar files
         run:  tar -zcvf Indie Cross.tar.gz -C export/release/macos/bin .
         
-      - uses: actions/upload-artifact@main
+      - name: Upload Artifact
+        uses: actions/upload-artifact@main
         with:
           name: Windows Build
           path: export/release/windows/bin
