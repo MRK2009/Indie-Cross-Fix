@@ -45,7 +45,7 @@ jobs:
           haxelib list
 
       - name: Building
-        run: haxelib run lime build windows -final
+        run: haxelib run lime build windows -final -D analyzer-optimize
 
       - name: Upload Artifact
         uses: actions/upload-artifact@main
