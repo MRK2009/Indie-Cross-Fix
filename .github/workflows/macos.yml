@@ -50,7 +50,7 @@ jobs:
           haxelib list
           
       - name: Building
-        run: haxelib run lime build mac -final
+        run: haxelib run lime build mac -final -D analyzer-optimize
 
       - name: Tar files
         run:  tar -zcvf Indie Cross.tar.gz -C export/release/macos/bin .
