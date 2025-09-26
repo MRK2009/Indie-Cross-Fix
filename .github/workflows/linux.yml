@@ -50,7 +50,7 @@ jobs:
           haxelib list
 
       - name: Building
-        run: haxelib run lime build linux -final
+        run: haxelib run lime build linux -final -D analyzer-optimize
 
       - name: Upload Artifact
         uses: actions/upload-artifact@main
