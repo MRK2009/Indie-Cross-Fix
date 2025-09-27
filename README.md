@@ -50,7 +50,7 @@ This game was made with love to Newgrounds and its community. Extra love to Tom 
 	- `haxelib install flixel 4.11.0`
 	- `haxelib run lime setup`
 	- `haxelib run lime setup flixel`
-	- `haxelib install flixel-tools 1.5.1`
+	- `haxelib install flixel-tools`
 	- `haxelib run flixel-tools setup`
 	- `haxelib install flixel-addons 2.11.0`
 	- `haxelib install flixel-ui 2.4.0`
