@@ -6,7 +6,7 @@ name: Linux Build CI
 on: workflow_dispatch
 jobs:
   Build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     permissions:
         contents: write
         actions: write
@@ -22,7 +22,7 @@ jobs:
       - name: Setup Haxe
         uses: krdlab/setup-haxe@master
         with:
-          haxe-version: 4.2.0
+          haxe-version: 4.2.5
 
       # Runs a set of commands using the runners shell
       - name: Installing Libraries
@@ -30,8 +30,6 @@ jobs:
           sudo add-apt-repository ppa:haxe/releases -y
           sudo apt-get update
           sudo apt-get install gcc-multilib g++-multilib haxe -y
-          wget http://mirrors.kernel.org/ubuntu/pool/main/libi/libidn/libidn11_1.33-2.2ubuntu2_amd64.deb
-          sudo apt install ./libidn11_1.33-2.2ubuntu2_amd64.deb
           haxelib setup ~/haxelib
           haxelib install lime 7.9.0
           haxelib install openfl 9.1.0
@@ -42,7 +40,7 @@ jobs:
           printf "y\n4\n" | haxelib run flixel-tools setup
           haxelib install flixel-addons 2.11.0
           haxelib install flixel-ui 2.4.0
-          haxelib install linc_luajit 0.0.7
+          haxelib install linc_luajit
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
           haxelib git systools https://github.com/haya3218/systools
           haxelib run lime rebuild systools linux
