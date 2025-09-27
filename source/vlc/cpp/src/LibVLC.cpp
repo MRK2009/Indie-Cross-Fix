@@ -43,23 +43,37 @@ LibVLC::LibVLC(void)
 }
 
 LibVLC::~LibVLC(void)
-{ 
-    libvlc_event_detach( eventManager, libvlc_MediaPlayerSnapshotTaken, 	callbacks, this );
-    libvlc_event_detach( eventManager, libvlc_MediaPlayerTimeChanged, 		callbacks, this );
-    libvlc_event_detach( eventManager, libvlc_MediaPlayerPlaying, 			callbacks, this );
-    libvlc_event_detach( eventManager, libvlc_MediaPlayerPaused, 			callbacks, this );
-    libvlc_event_detach( eventManager, libvlc_MediaPlayerStopped, 			callbacks, this );
-    libvlc_event_detach( eventManager, libvlc_MediaPlayerEndReached, 		callbacks, this );
-    libvlc_event_detach( eventManager, libvlc_MediaPlayerPositionChanged,	callbacks, this );
+{
+    // Detach VLC event callbacks
+    libvlc_event_detach(eventManager, libvlc_MediaPlayerSnapshotTaken, callbacks, this);
+    libvlc_event_detach(eventManager, libvlc_MediaPlayerTimeChanged, callbacks, this);
+    libvlc_event_detach(eventManager, libvlc_MediaPlayerPlaying, callbacks, this);
+    libvlc_event_detach(eventManager, libvlc_MediaPlayerPaused, callbacks, this);
+    libvlc_event_detach(eventManager, libvlc_MediaPlayerStopped, callbacks, this);
+    libvlc_event_detach(eventManager, libvlc_MediaPlayerEndReached, callbacks, this);
+    libvlc_event_detach(eventManager, libvlc_MediaPlayerPositionChanged, callbacks, this);
 
-    libvlc_media_player_release( libVlcMediaPlayer );	
-	libvlc_release( libVlcInstance );
-	
-	delete libVlcInstance;
-	delete libVlcMediaItem;
-	delete libVlcMediaPlayer;
-	
-	delete ctx.pixeldata;
+    // Release VLC resources safely
+    if (libVlcMediaPlayer) {
+        libvlc_media_player_release(libVlcMediaPlayer);
+        libVlcMediaPlayer = nullptr;
+    }
+
+    if (libVlcMediaItem) {
+        libvlc_media_release(libVlcMediaItem);
+        libVlcMediaItem = nullptr;
+    }
+
+    if (libVlcInstance) {
+        libvlc_release(libVlcInstance);
+        libVlcInstance = nullptr;
+    }
+
+    // Free pixel buffers
+    delete[] ctx.pixeldata;
+    delete[] ctx.pixeldata2;
+    ctx.pixeldata = nullptr;
+    ctx.pixeldata2 = nullptr;
 }
 
 LibVLC* LibVLC::create()
@@ -237,12 +251,20 @@ libvlc_time_t LibVLC::getDuration()
 
 int LibVLC::getWidth()
 {
-	return libvlc_video_get_width(libVlcMediaPlayer);
+    if (!libVlcMediaPlayer) return 0;
+    unsigned width = 0, height = 0;
+    if (libvlc_video_get_size(libVlcMediaPlayer, 0, &width, &height) == 0)
+        return static_cast<int>(width);
+    return 0;
 }
 
 int LibVLC::getHeight()
 {
-	return libvlc_video_get_height(libVlcMediaPlayer);
+    if (!libVlcMediaPlayer) return 0;
+    unsigned width = 0, height = 0;
+    if (libvlc_video_get_size(libVlcMediaPlayer, 0, &width, &height) == 0)
+        return static_cast<int>(height);
+    return 0;
 }
 
 int LibVLC::isPlaying()
