@@ -1,45 +1,43 @@
-<!-- <p align="center">
-	<img width="600" height="600" src="art/iconOG.png"> 
-</p> -->
-
 # Friday Night Funkin': Indie Cross
-## About
-FNF: Indie Cross is a massive community collaboration with the goal of bringing together an ultimate rhythm gaming experience
 
-# Indie Cross Fix?
-This repository contains the source Indie Cross source code where errors have been removed.
-The developers left some material in the code that isn't in the source code.
+## Descrizione
 
-# Credits
-### Team Credits in-game
+**FNF: Indie Cross** è una grande collaborazione della community con l’obiettivo di creare un’esperienza di gioco ritmica unica e coinvolgente, unendo personaggi e universi iconici da vari indie games.
 
-### Friday Night Funkin'
- - [ninjamuffin99](https://twitter.com/ninja_muffin99) - Programming
- - [PhantomArcade3K](https://twitter.com/phantomarcade3k) and [Evilsk8r](https://twitter.com/evilsk8r) - Art
- - [Kawai Sprite](https://twitter.com/kawaisprite) - Music
+---
 
-This game was made with love to Newgrounds and its community. Extra love to Tom Fulp.'
+## Indie Cross Fix
 
-### Bendy and the Ink Machine
- - [Joey Drew Studios](https://twitter.com/joeydrewstu)
+Questo repository contiene una versione corretta del codice sorgente della mod **Indie Cross**.
 
-### Cuphead
- - [Studio MDHR](https://twitter.com/studiomdhr)
+Alcuni errori originali sono stati rimossi e parte del materiale lasciato nel codice dai developer è stato sistemato o rimosso per migliorare la stabilità.
 
-### Undertale
- - [Toby Fox](https://twitter.com/tobyfox)
+---
 
-### Untitled Goose Game
- - [House House](https://twitter.com/house_house_)
+## Crediti
 
-### BINK Video Player
- - [RAD Game Tools](http://www.radgametools.com/)
+### Team di sviluppo FNF
 
-### Adobe Animate CC - Texture Atlas for OpenFL
- - [mathieuanthoine](https://github.com/mathieuanthoine)
+- [@ninja_muffin99](https://twitter.com/ninja_muffin99) – Programmazione  
+- [@phantomarcade3k](https://twitter.com/phantomarcade3k) & [@evilsk8r](https://twitter.com/evilsk8r) – Arte  
+- [@kawaisprite](https://twitter.com/kawaisprite) – Musica  
+
+> Questo gioco è stato creato con amore per **Newgrounds** e la sua community.  
+> Extra love a **Tom Fulp** ❤️
+
+---
+
+### I giochi rappresentati
+
+- **Bendy and the Ink Machine** – [Joey Drew Studios](https://twitter.com/joeydrewstu)  
+- **Cuphead** – [Studio MDHR](https://twitter.com/studiomdhr)  
+- **Undertale** – [Toby Fox](https://twitter.com/tobyfox)  
+- **Untitled Goose Game** – [House House](https://twitter.com/house_house_)  
+- **BINK Video Player** – [RAD Game Tools](http://www.radgametools.com/)  
+- **Adobe Animate CC (Texture Atlas for OpenFL)** – [mathieuanthoine](https://github.com/mathieuanthoine)
 
 
-# Installation
+# Installazione
 1. [Install Haxe](https://haxe.org/download)
 2. Install `git`.
 	- Windows: install from the [git-scm](https://git-scm.com/downloads) website.
