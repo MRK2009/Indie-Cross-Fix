@@ -22,14 +22,14 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: script run line haha
         run: |
-          haxelib install lime 7.9.0
-          haxelib install openfl 9.1.0
-          haxelib install flixel 4.11.0
-          haxelib install flixel-tools
-          haxelib install flixel-addons 2.11.0
-          haxelib install flixel-ui 2.4.0
-          haxelib install linc_luajit
-          haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
+          haxelib install lime 7.9.0 --quiet
+          haxelib install openfl 9.1.0 --quiet
+          haxelib install flixel 4.11.0 --quiet
+          haxelib install flixel-tools --quiet
+          haxelib install flixel-addons 2.11.0 --quiet
+          haxelib install flixel-ui 2.4.0 --quiet
+          haxelib install linc_luajit --quiet
+          haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc --skip-dependencies
           haxelib git tentools https://github.com/TentaRJ/tentools
           haxelib list
           haxelib run lime build windows
