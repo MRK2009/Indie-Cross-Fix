@@ -32,10 +32,10 @@ jobs:
           haxelib install linc_luajit --quiet
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc --skip-dependencies
           haxelib git systools https://github.com/haya3218/systools
+          haxelib run lime rebuild hxcpp
           haxelib run lime rebuild systools windows
           haxelib git tentools https://github.com/TentaRJ/tentools
           haxelib list
-          haxelib run lime rebuild hxcpp
           haxelib run lime build windows
           
       - uses: actions/upload-artifact@v7
