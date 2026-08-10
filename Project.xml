@@ -80,9 +80,8 @@
 
 	<haxedef name="HXCPP_GC_GENERATIONAL" />
 	<haxedef name="HXCPP_GC_DYNAMIC_SIZE" />
-	<haxedef name="HXCPP_CPP17" />
 	<haxedef name="HXCPP_GC_BIG_BLOCKS" />
-	<haxedef name="HXCPP_FAST_LINK"/>
+	<haxedef name="HXCPP_FAST_LINK" unless="debug" />
 
 	<!-- _________________________________ Custom _______________________________ -->
 
