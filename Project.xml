@@ -60,6 +60,7 @@
     <haxelib name="tentools" />
 	<haxelib name="linc_luajit" if="cpp"/>
 	<haxelib name="systools" if="cpp"/>
+	<haxelib name="hxCodec" if="cpp"/>
     <ndll name="systools" haxelib="systools" if="cpp" />
 
 	<!-- ______________________________ Haxedefines _____________________________ -->
