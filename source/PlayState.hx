@@ -365,7 +365,7 @@ class PlayState extends MusicBeatState
 
 	var machineCurtainLeft:FlxSprite;
 	var machineCurtainRight:FlxSprite;
-	var freakyMachineVideoSpr:FlxSprite;
+	var freakyMachineVideoSpr:VideoSprite;
 
 	var lastAnimPlay:Float = 0;
 
@@ -1137,14 +1137,13 @@ class PlayState extends MusicBeatState
 								freakyMachineVideoSpr.blend = ADD;
 								freakyMachineVideoSpr.alpha = 0.0001;
 
-								var freakyMachineVideo:VideoHandler = new VideoHandler();
 								var videoName:String = 'bgscenephotosensitive';
 								if (!FlxG.save.data.photosensitive && FlxG.save.data.highquality)
 								{
 									videoName = 'bgscene';
 								}
-								freakyMachineVideo.playMP4(Paths.video('bendy/' + videoName), true, freakyMachineVideoSpr, false, false, true);
-								gameVideos.push(freakyMachineVideo);
+								freakyMachineVideoSpr.playVideo(Paths.video('bendy/' + videoName), true);
+								gameVideos.push(freakyMachineVideoSpr);
 
 								machineCurtainLeft = new FlxSprite(-403, -50).loadGraphic(Paths.image('bonusSongs/Curtain1', "shared"));
 								machineCurtainLeft.setGraphicSize(Std.int(machineCurtainLeft.width * 1.6));
