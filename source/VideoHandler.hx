@@ -82,6 +82,7 @@ class VideoHandler
 
 	function checkFile(fileName:String):String
 	{
+		var pDir = "";
 		var appDir = #if !linux "file:///" + Sys.getCwd() + "/" #else "file://" + Sys.getCwd() #end;
 
 		if (fileName.indexOf(":") == -1) // Not a path
