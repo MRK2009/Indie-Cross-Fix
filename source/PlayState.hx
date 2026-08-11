@@ -1127,6 +1127,7 @@ class PlayState extends MusicBeatState
 								bg.active = false;
 								add(bg);
 
+								freakyMachineVideoSpr = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.WHITE);
 								freakyMachineVideoSpr.width = FlxG.width / 4;
 								freakyMachineVideoSpr.height = FlxG.height / 4;
 								add(freakyMachineVideoSpr);
@@ -5062,7 +5063,7 @@ class PlayState extends MusicBeatState
 			{
 				for (i in 0...gameVideos.length)
 				{
-					gameVideos[i].resume();
+					gameVideos[i].bitmap.resume();
 				}
 			}
 
@@ -7503,9 +7504,8 @@ class PlayState extends MusicBeatState
 		camOVERLAY.visible = false;
 		canPause = false;
 		var video:VideoHandler = new VideoHandler();
-		video.canSkip = false;
-
-		FlxG.camera.fade(FlxColor.BLACK, 1, true);
+		video.fadeFromBlack = true;
+		video.allowSkip = false;
 
 		if (MainMenuState.debugTools)
 		{
@@ -9375,10 +9375,9 @@ class PlayState extends MusicBeatState
 					{
 						canPause = false;
 						var video:VideoHandler = new VideoHandler();
-						video.canSkip = false;
-						video.playVideo(Paths.video('bendy/1.5'));
-
-						FlxG.camera.fade(FlxColor.BLACK, 1, true);
+						video.fadeFromBlack = true;
+						video.allowSkip = false;
+						video.playMP4(Paths.video('bendy/1.5'), false, null, false, false, true);
 
 						remove(light);
 					});
@@ -12206,7 +12205,7 @@ class PlayState extends MusicBeatState
 		{
 			for (i in 0...gameVideos.length)
 			{
-				gameVideos[i].pause();
+				gameVideos[i].bitmap.pause();
 			}
 		}
 
